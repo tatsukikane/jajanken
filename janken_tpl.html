@@ -4,13 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <script src="js/jquery-2.1.3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jrumble/1.3.0/jquery.jrumble.min.js"
+integrity="sha512-0vcUK0oQ15FtIrg1bbNL6zO2yB0pSZjPZERBNA0ZXIw/7jsSHu+rxxbpbM20wIaiEofTK9oPoP/Y8xvh3qoasQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="css/sample.css">
 <link rel="stylesheet" href="css/reset.css">
 <title>ジャジャン拳</title>
 </head>
 <body>
 
-  <div class="top">
+  <div class="top" id="top">
     <h1>ジャジャン拳</h1>
     <div class="top_content">
       <img src="./img/ゴン切り抜き.png" alt="">
@@ -21,24 +23,26 @@
     </div>
   </div>
 
-  <div class="main">
-    <img src="./img/ジャジャンケン.jpg" alt="">
-    <p>あなたは何を出す？？</p>
+  <div class="main" id="main">
+    <img id="main_img" src="./img/ジャジャンケン.jpg" alt="">
+    <p>さあ勝負!!!</p>
     <ul>
-      <li> <button id="gu_btn">グー</button> </li>
-      <li> <button id="cho_btn">チョキ</button></li>
-      <li> <button id="par_btn">パー</button></li>
+      <li> <button id="gu_btn">&#128074;</button> </li>
+      <li> <button id="cho_btn">&#9996;</button></li>
+      <li> <button id="par_btn">&#128400;</button></li>
     </ul>
   </div>
 
-  <div class="judgment_area">
-    <div>相手は？「<span id="pc_hands">なに？</span>」</div>
-    <div id="aiteimg"> <img src="" alt="">  </div>
+  <div class="judgment_area" id="judgment_area">
+    <p>相手は.....</p>
+    <!-- 「<span id="pc_hands">なに？</span>」 -->
+    <div id="aiteimg"></div>
   </div>
 
-  <div class="last">
-    <img src="" alt="">
-    <div id="judgment">勝ち</div>
+  <div class="last" id="last">
+    <p>結果は。。。。。</p>
+    <div id ="last_img"></div>
+    <!-- <div id="judgment"></div> -->
   </div>
 
 <script>
@@ -51,46 +55,131 @@ let r = Math.random () * 3;
 let n = Math.ceil (r);
 // alert(n);
 
+$("#start_btn").on("click",function(){
+  $("#top").remove();
+  $("#main").show();
+});
+
 
 $("#gu_btn").on("click",function(){
   if (n == 1){
     $("#pc_hands").html("ぐー");
     $("#aiteimg").html('<img src="./img/グー.png">')
     $("#judgment").html("あいこ");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/あいこ.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }else if(n == 2){
     $("#pc_hands").html("ちょき");
+    $("#aiteimg").html('<img src="./img/チー.png">')
     $("#judgment").html("勝ち");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/勝利.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }else{
     $("#pc_hands").html("パー");
+    $("#aiteimg").html('<img src="./img/パー.png">')
     $("#judgment").html("負け");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/負け.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }
 });
 
 $("#cho_btn").on("click",function(){
   if (n == 1){
     $("#pc_hands").html("ぐー");
+    $("#aiteimg").html('<img src="./img/グー.png">')
     $("#judgment").html("負け");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/負け.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }else if(n == 2){
     $("#pc_hands").html("ちょき");
+    $("#aiteimg").html('<img src="./img/チー.png">')
     $("#judgment").html("あいこ");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/あいこ.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }else{
     $("#pc_hands").html("パー");
+    $("#aiteimg").html('<img src="./img/パー.png">')
     $("#judgment").html("勝ち");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/勝利.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }
 });
     
 $("#par_btn").on("click",function(){
   if (n == 1){
     $("#pc_hands").html("ぐー");
+    $("#aiteimg").html('<img src="./img/グー.png">')
     $("#judgment").html("勝ち");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/勝利.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }else if(n == 2){
     $("#pc_hands").html("ちょき");
+    $("#aiteimg").html('<img src="./img/チー.png">')
     $("#judgment").html("負け");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/負け.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }else{
     $("#pc_hands").html("パー");
+    $("#aiteimg").html('<img src="./img/パー.png">')
     $("#judgment").html("あいこ");
+    setTimeout(function(){
+      $("#last_img").html('<img src="./img/あいこ.png">');
+      $("#judgment_area").remove();
+      $("#last").show();
+    }, 3000);
+    $("#main").remove();
+    $("#judgment_area").show();
   }
 });
+
+//main画面の写真震わせ
+$("#main_img").jrumble({
+  x: 2,
+  y: 2,
+  rotation: 1,
+  // speed: 100
+});
+$("#main_img").trigger('startRumble')
     
     
 </script>

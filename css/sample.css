@@ -8,10 +8,12 @@ body{
 
 }
 .top{
+    width: 100%;
     height: 650px;
     background-image: url(../img/暗黒大陸.jpg);
     background-position: center;
     background-size: cover;
+    /* display: none; */
 }
 
 .top h1{
@@ -50,7 +52,52 @@ body{
     font-family: HiraKakuProN-W6;
 }
 
+/* main画面 */
 
+.main p{
+    text-align: center;
+    font-size: 50px;
+    margin-top: 30px;
+}
+#main_img{
+    margin-top: 50px;
+}
+.main ul{
+    margin-top: 70px;
+}
+
+#gu_btn{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    font-size: 60px;
+    font-family: HiraKakuProN-W6;
+    background-color: rgba(255, 0, 0, 0.8);
+    color: white;
+    border:  double 20px;
+}
+#cho_btn{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    font-size: 60px;
+    font-family: HiraKakuProN-W6;
+    background-color: rgba(255, 255, 0, 0.8);
+    color: white;
+    border:  double 20px;
+
+}
+#par_btn{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    font-size: 60px;
+    font-family: HiraKakuProN-W6;
+    background-color: rgba(0, 0, 255, 0.8);
+    color: white;
+    border:  double 20px;
+
+}
 
 ul{
     padding: 0;
@@ -72,7 +119,29 @@ li:hover{
     color:#fff;
 } 
 
+/* ジャッジメントエリア */
+.judgment_area p{
+    font-size: 45px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+#aiteimg {
+    text-align: center;
+}
 
+.last{
+    text-align: center;
+}
+/* lastエリア */
+.last p{
+    font-size: 45px;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: white;
+    font-family: HiraKakuProN-W6;
+}
 
 .main{
     display: none;
@@ -82,4 +151,9 @@ li:hover{
 }
 .last{
     display: none;
+    width: 100%;
+    height: 650px;
+    background-image: url(../img/背景.png);
+    background-position: center;
+    background-size: cover;
 }
